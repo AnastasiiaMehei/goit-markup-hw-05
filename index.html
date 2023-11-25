@@ -468,14 +468,18 @@
                 <textarea class="contact-form-textarea" name="user-comment" rows="5" placeholder="Text input" id="user-comment"></textarea>
             </div>
             <div class="modal-form-checkbox-div">
-                <input type="checkbox" name="user-privacy" value="true" checked/>
+                <input class="visually-hidden modal-form-checkbox-input" type="checkbox" name="user-privacy" value="true" checked/>
                 <label class="modal-form-label-checkbox">
-                    <span></span>
+                    <span class="modal-form-checkbox-span">
+                        <svg width="16" height="16">
+                            <use href="./images/icons.svg#icon-click"></use>
+                        </svg>
+                    </span>
                     I accept the terms and conditions of the
                     <a class="modal-form-link">Privacy Policy</a>
                 </label>
             </div>
-                <button class="modal-form-buttom" type="submit">Send</button>        
+                <button class="modal-form-button" type="submit">Send</button>        
         </form>
         </div>
     
