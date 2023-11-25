@@ -604,9 +604,6 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.icon-close {
-    fill: #2E2F42;
-}
 .modal-form-paragraph {
     color: #2E2F42;
 text-align: center;
@@ -629,4 +626,63 @@ letter-spacing: 0.02em;
 .button-close:focus {
     background-color: #404BBF;  
     fill: #FFFFFF;
+}
+.modal-form-paragraph {
+    color: #2E2F42;
+text-align: center;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.5; 
+letter-spacing: 0.02em;
+margin-bottom: 16px;
+}
+.modal-form-div {
+    margin-bottom: 8px;
+}
+.modal-form-checkbox-div {
+    margin-bottom: 24px;
+}
+.input-name-phone-email {
+    position: relative;
+    color: #8E8F99;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 38px;
+    border-radius: 4px;
+border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+    background-color: transparent;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-name-phone-email:focus {
+    border-color: #4D5AE5;
+    fill: #4D5AE5;
+}
+.input-name-phone-email:focus .input-icon {
+    fill: #4D5AE5;
+}
+.input-div {
+    position: relative;
+}
+.input-icon {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+.modal-form-label {
+    margin-bottom: 4px;
+    display: block;
+    color: #8E8F99;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
 }
