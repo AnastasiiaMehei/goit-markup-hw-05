@@ -507,31 +507,81 @@ height: 40px;
 
 }
 .button-footer {
-    max-width: 165px;
+    min-width: 165px;
     height: 40px;
     display: flex;
-    padding: 8px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    border-radius: 4px;
-    background: #4D5AE5;
-    color: #FFF;
-    font-family: Roboto;
+justify-content: center;
+align-items: center;
+font-family: "Roboto", sans-serif;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.04;
+    color: #FFFFFF;
     cursor: pointer;
-
+    background-color: #4D5AE5;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
 }
 .icon-send-svg {
     width: 24px;
     height: 24px;
+    margin-left: 16px;
     fill: #FFFFFF;
 }
-/* ================== Modal form =============== */
+/* ====================== div for backdrop and open ============== */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.40);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(46, 47, 66, 0.4);
+}
+.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+/* ============ button close ============= */
+.button-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    Transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-close:hover {
+    background-color: #404BBF;  
+    border: none;
+    fill: #ffffff;
+}
+.button-close:focus {
+    background-color: #404BBF;
+    border: none;  
+    fill: #ffffff;
+}
+.button-close-svg {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+}
+/* ================ model form ================ */
 .modal-form {
     position: absolute;
     top: 50%;
@@ -550,118 +600,63 @@ height: 40px;
     padding-right: 24px;
     padding-left: 24px;
 }
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(46, 47, 66, 0.40);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-.button-close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e7e9fc;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0;
-    cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* =============== paragraph modal form */
 .modal-form-paragraph {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5; 
+    text-align: center;
+    letter-spacing: 0.02em;
     color: #2E2F42;
-text-align: center;
-font-family: Roboto;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 1.5; 
-letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 16px;
 }
-.button-close:hover {
-    background-color: #404BBF;  
-    fill: #FFFFFF;
-}
-.button-close:focus {
-    background-color: #404BBF;  
-    fill: #FFFFFF;
-}
-.modal-form-paragraph {
-    color: #2E2F42;
-text-align: center;
-font-family: Roboto;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 1.5; 
-letter-spacing: 0.02em;
-margin-bottom: 16px;
-}
+/*  ================== FORM ===================== */
+/*  =================== div FOR modal form  ==============*/
 .modal-form-div {
     margin-bottom: 8px;
 }
-.modal-form-checkbox-div {
-    margin-bottom: 24px;
-}
-.input-name-phone-email {
-    position: relative;
-    color: #8E8F99;
-    font-family: Roboto;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.16;
-    letter-spacing: 0.04em;
-    display: block;
-    width: 100%;
-    height: 40px;
-    padding-left: 38px;
-    border-radius: 4px;
-border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
-    background-color: transparent;
-    outline: transparent;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.input-name-phone-email:focus {
-    border-color: #4D5AE5;
-    fill: #4D5AE5;
-}
-.input-name-phone-email:focus + .input-icon {
-    fill: #4D5AE5;
-}
-.input-div {
-    position: relative;
-}
-.input-icon {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-}
 .modal-form-label {
-    margin-bottom: 4px;
-    display: block;
-    color: #8E8F99;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    margin-bottom: 4px;
+    color: #8E8F99;
+    display: block;
+    margin-bottom: 4px; 
 }
+/* ============ input div ================= */
+.input-div {
+    position: relative;
+}
+
+.input-name-phone-email {
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+background-color: transparent;
+padding-left: 38px;
+outline: transparent;
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+border-color: #4D5AE5; 
+}
+.input-name-phone-email:focus {
+    border-color: #4D5AE5;
+    fill: #4D5AE5; 
+}
+
+.input-name-phone-email:focus + .input-icon {
+    fill: #4D5AE5;
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%); 
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .contact-form-textarea {
     display: block;
     width: 100%;
@@ -679,15 +674,7 @@ border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
 }
-.modal-form-label-checkbox {
-    color: #8E8F99;
-    font-family: Roboto;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.16;
-    letter-spacing: 0.04em;
-}
+
 .modal-form-div-textarea {
     margin-bottom: 16px;
 }
@@ -703,30 +690,40 @@ border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
 }
 /* ================ modal form button ================ */
 .modal-form-button {
-    margin: auto;
-    padding: 16px 32px;
-    border-radius: 4px;
-    background-color: #4D5AE5;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    margin-top: 16px;
-    display: block;
     min-width: 169px;
     height: 56px;
     font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em; 
+    color: #ffffff;
     cursor: pointer;
+    background-color: #4D5AE5;
     border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    margin: auto;
+    padding: 16px 32px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        margin-top: 16px; 
 }
 .modal-form-button:focus,
 .modal-form-button:hover {
 background: #404BBF;
 }
 /* ================= checkbox ======================= */
+
+.modal-form-checkbox-div {
+    margin-bottom: 24px;
+}
+.modal-form-label-checkbox {
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+}
 .modal-form-checkbox-span {
     width: 16px;
     height: 16px;
@@ -737,10 +734,9 @@ background: #404BBF;
     align-items: center;
     justify-content: center;
     fill: transparent;
-    margin-right: 8px;
 }
 .modal-form-checkbox-input:checked+.modal-form-label-checkbox>.modal-form-checkbox-span {
     background-color: #404BBF;
+    border: none;
     fill: #ffffff;
-    border: 1px solid #404BBF;
 }
